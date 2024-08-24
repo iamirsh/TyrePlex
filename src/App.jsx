@@ -5,6 +5,9 @@ import Services from "./components/Services";
 import Deals from "./components/Deals";
 import MyNavbar from "./components/Navbar";
 import TyreSold from "./components/TyreSold";
+import PaymentMode from "./components/PaymentMode";
+import AskQuestion from "./components/AskQuestion";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
       <Deals />
       <Services />
       <TyreSold />
+      <PaymentMode />
+      <AskQuestion />
+      <Footer />
     </div>
   );
 }
