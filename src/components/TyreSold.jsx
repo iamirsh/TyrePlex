@@ -118,17 +118,19 @@ const TyreSold = () => {
             }}
           ></div>
         </h2>
-        <div className="d-flex gap-2">
+        <div className="d-flex justify-content-end gap-4">
           <Dropdown
             onClick={() => setShowDropdown(!showDropdown)}
             onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
-            
           >
             <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic">
               Filter By
             </Dropdown.Toggle>
 
-            <Dropdown.Menu show={showDropdown} className="w-100">
+            <Dropdown.Menu
+              show={showDropdown}
+              className="w-100 dropdown-menu-custom"
+            >
               <FormControl
                 type="text"
                 placeholder="Search..."
@@ -147,6 +149,7 @@ const TyreSold = () => {
                         setSearchTerm("");
                         setShowDropdown(false);
                       }}
+                      className="dropdown-item"
                     >
                       {item}
                     </ListGroup.Item>
@@ -160,7 +163,6 @@ const TyreSold = () => {
           <Dropdown
             onClick={() => setShowDropdown2(!showDropdown2)}
             onBlur={() => setTimeout(() => setShowDropdown2(false), 200)}
-            
           >
             <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic">
               Most Popular
@@ -185,6 +187,7 @@ const TyreSold = () => {
                         setSearchTerm2("");
                         setShowDropdown2(false);
                       }}
+                      className="dropdown-item"
                     >
                       {item}
                     </ListGroup.Item>
@@ -279,6 +282,29 @@ const TyreSold = () => {
           .testimonial-card {
             margin: 0 10px;
           }
+        }
+        .dropdown-menu-custom {
+          max-height: 200px; /* Set the max height for the dropdown menu */
+          overflow-y: auto; /* Enable scrolling */
+          scrollbar-width: none; /* For Firefox */
+          padding: 0;
+          border-radius: 0.25rem;
+        }
+
+        .dropdown-menu-custom::-webkit-scrollbar {
+          display: none; /* For Webkit browsers like Chrome and Safari */
+        }
+
+        .dropdown-item {
+          outline: none; /* Remove the outline */
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+          background-color: #007bff; /* Primary background color on hover */
+          color: #fff; /* Change text color on hover */
+          box-shadow: none; /* Remove any box shadow */
+          outline: none; /* Remove outline on focus */
         }
       `}</style>
     </div>
