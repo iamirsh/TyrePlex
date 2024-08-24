@@ -1,10 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap is imported
 
 const PaymentMode = () => {
   return (
     <>
+      {/* Header Section */}
       <h2
         className="text-center my-4"
         style={{
@@ -15,6 +16,7 @@ const PaymentMode = () => {
         }}
       >
         Payment Mode
+        {/* Underline Style */}
         <div
           style={{
             width: "80px",
@@ -25,53 +27,28 @@ const PaymentMode = () => {
           }}
         ></div>
       </h2>
+
+      {/* Container with light background for content */}
       <Container className="bg-light p-4">
         <Row>
-          <Col sm={6} className="mb-2">
-            <div className="d-flex align-items-center gap-3">
-              <i
-                className="bi bi-check-lg text-success"
-                style={{ fontSize: "1.5rem", fontWeight: "bold" }} // Increased font size and added boldness
-              ></i>
-              <span>Deposit to Account</span>
-            </div>
-          </Col>
-          <Col sm={6} className="mb-2">
-            <div className="d-flex align-items-center gap-3">
-              <i
-                className="bi bi-check-lg text-success"
-                style={{ fontSize: "1.5rem", fontWeight: "bold" }}
-              ></i>
-              <span>Net Banking</span>
-            </div>
-          </Col>
-          <Col sm={6} className="mb-2">
-            <div className="d-flex align-items-center gap-3">
-              <i
-                className="bi bi-check-lg text-success"
-                style={{ fontSize: "1.5rem", fontWeight: "bold" }}
-              ></i>
-              <span>Credit Card/Debit Card</span>
-            </div>
-          </Col>
-          <Col sm={6} className="mb-2">
-            <div className="d-flex align-items-center gap-3">
-              <i
-                className="bi bi-check-lg text-success"
-                style={{ fontSize: "1.5rem", fontWeight: "bold" }}
-              ></i>
-              <span>UPI</span>
-            </div>
-          </Col>
-          <Col sm={6} className="mb-2">
-            <div className="d-flex align-items-center gap-3">
-              <i
-                className="bi bi-check-lg text-success"
-                style={{ fontSize: "1.5rem", fontWeight: "bold" }}
-              ></i>
-              <span>Wallets (PayTM/PhonePe/Amazon etc.)</span>
-            </div>
-          </Col>
+          {/* Payment Options with Font Size and Bold Check Icon */}
+          {[
+            "Deposit to Account",
+            "Net Banking",
+            "Credit Card/Debit Card",
+            "UPI",
+            "Wallets (PayTM/PhonePe/Amazon etc.)",
+          ].map((paymentOption, index) => (
+            <Col sm={6} className="mb-2" key={index}>
+              <div className="d-flex align-items-center gap-3">
+                <i
+                  className="bi bi-check-lg text-success"
+                  style={{ fontSize: "1.5rem", fontWeight: "bold" }} // Increased font size and boldness for visibility
+                ></i>
+                <span>{paymentOption}</span>
+              </div>
+            </Col>
+          ))}
         </Row>
       </Container>
     </>

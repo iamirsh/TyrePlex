@@ -1,11 +1,11 @@
 import React from "react";
 import wheel from "../assets/images/wheels.png";
 import balancing from "../assets/images/balancing.png";
-import { Card, Row, Col, Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import { Card, Row, Col, Container, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap is imported globally
 
 const Services = () => {
-  const testimonials = [
+  const services = [
     {
       image: balancing,
       name: "Wheel Balancing",
@@ -15,8 +15,10 @@ const Services = () => {
       name: "Wheel Alignment",
     },
   ];
+
   return (
     <>
+      {/* Header Section */}
       <h2
         className="text-center my-4"
         style={{
@@ -37,16 +39,18 @@ const Services = () => {
           }}
         ></div>
       </h2>
+
+      {/* Main Content */}
       <div
         className="container"
         style={{ backgroundColor: "#f8f9fa", padding: "20px 0" }}
       >
         <Container>
           <Row>
-            {testimonials.map((testimonial, index) => (
+            {services.map((service, index) => (
               <Col lg={4} md={6} sm={12} key={index} className="mb-4">
                 <Card
-                  className="testimonial-card h-100 p-4 d-flex flex-column align-items-center justify-content-center text-center"
+                  className="h-100 p-4 d-flex flex-column align-items-center justify-content-center text-center"
                   style={{
                     borderRadius: "15px",
                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
@@ -55,6 +59,7 @@ const Services = () => {
                     backgroundColor: "#ffffff",
                   }}
                 >
+                  {/* Service Icon */}
                   <div
                     className="d-flex justify-content-center align-items-center mb-3"
                     style={{
@@ -67,15 +72,16 @@ const Services = () => {
                     }}
                   >
                     <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className=""
+                      src={service.image}
+                      alt={service.name}
                       style={{ width: "70px", height: "70px" }}
                     />
                   </div>
+                  {/* Service Title */}
                   <Card.Title className="mt-2" style={{ fontSize: "1.25rem" }}>
-                    {testimonial.name}
+                    {service.name}
                   </Card.Title>
+                  {/* Book Now Button */}
                   <Button variant="danger">Book Now</Button>
                 </Card>
               </Col>

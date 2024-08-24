@@ -9,6 +9,7 @@ import MRF from "../assets/images/MRF.png";
 import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap icons
 
 const Deals = () => {
+  // List of brands with their images
   const testimonials = [
     { image: MRF, name: "MRF" },
     { image: CEAT, name: "CEAT" },
@@ -23,6 +24,7 @@ const Deals = () => {
     { image: CEAT, name: "CEAT" },
   ];
 
+  // Function to split the testimonials array into chunks
   const chunkSize = 5;
   const groupedTestimonials = [];
   for (let i = 0; i < testimonials.length; i += chunkSize) {
@@ -51,42 +53,40 @@ const Deals = () => {
           }}
         ></div>
       </h2>
-      <div className="container my-4" style={{ backgroundColor: "#f8f9fa" }}>
-        <Container>
-          <Carousel indicators={false} controls={true}>
-            {groupedTestimonials.map((group, index) => (
-              <Carousel.Item key={index}>
-                <div className="d-flex gap-4 p-4">
-                  {group.map((testimonial, idx) => (
-                    <Card
-                      key={idx}
-                      className="testimonial-card p-2 text-center"
-                      style={{
-                        width: "200px",
-                        borderRadius: "10px",
-                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                        border: "none",
-                      }}
-                    >
-                      <Card.Img
-                        variant="top"
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        style={{ height: "20px", objectFit: "contain" }}
-                      />
-                      <Card.Body>
-                        <Card.Title style={{ fontSize: "1rem" }}>
-                          {testimonial.name}
-                        </Card.Title>
-                      </Card.Body>
-                    </Card>
-                  ))}
-                </div>
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </Container>
-      </div>
+      <Container className="my-4" style={{ backgroundColor: "#f8f9fa" }}>
+        <Carousel indicators={false} controls={true}>
+          {groupedTestimonials.map((group, index) => (
+            <Carousel.Item key={index}>
+              <div className="d-flex gap-4 p-4">
+                {group.map((testimonial, idx) => (
+                  <Card
+                    key={idx}
+                    className="testimonial-card p-2 text-center"
+                    style={{
+                      width: "200px",
+                      borderRadius: "10px",
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                      border: "none",
+                    }}
+                  >
+                    <Card.Img
+                      variant="top"
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      style={{ height: "80px", width:"100%", objectFit: "contain" }} // Adjusted height to improve visual balance
+                    />
+                    <Card.Body>
+                      <Card.Title style={{ fontSize: "1rem" }}>
+                        {testimonial.name}
+                      </Card.Title>
+                    </Card.Body>
+                  </Card>
+                ))}
+              </div>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </Container>
     </>
   );
 };

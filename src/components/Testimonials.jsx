@@ -3,15 +3,15 @@ import { Card, Row, Col, Container } from "react-bootstrap";
 import user1 from "../assets/images/Nasir.png";
 import user2 from "../assets/images/P.png";
 import user3 from "../assets/images/R.png";
-import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap icons
+import "bootstrap-icons/font/bootstrap-icons.css"; 
 
 const Testimonials = () => {
+  // Testimonial data
   const testimonials = [
     {
       image: user1,
       name: "Md Nasir",
-      comment:
-        "I had a fantastic experience using this product. It exceeded my expectations.",
+      comment: "I had a fantastic experience using this product. It exceeded my expectations.",
     },
     {
       image: user3,
@@ -21,8 +21,7 @@ const Testimonials = () => {
     {
       image: user2,
       name: "Pradeep Kumar",
-      comment:
-        "I highly recommend this product to anyone looking for a solution.",
+      comment: "I highly recommend this product to anyone looking for a solution.",
     },
   ];
 
