@@ -56,7 +56,7 @@ const Main = () => {
         </div>
         <div className="col-md-7 order-md-2 order-1">
           {/* Store Images */}
-          <Carousel className="d-flex justify-content-center">
+          <Carousel className="d-flex justify-content-center ">
             <Carousel.Item>
               <img className="d-block w-100" src={shop1} alt="First Slide" />
             </Carousel.Item>
