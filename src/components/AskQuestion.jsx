@@ -6,7 +6,7 @@ const AskQuestion = () => {
   return (
     // Container with background color and padding, using fluid for full width
     <Container
-      className="container my-4 p-4"
+      className="container mt-4 p-4 rounded-top-3"
       style={{ backgroundColor: "#FFEAAA" }}
       fluid
     >

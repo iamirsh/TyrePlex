@@ -26,7 +26,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: "#f8f9fa", padding: "20px 0" }}>
+    <div style={{ backgroundColor: "#f8f9fa", padding: "20px 0 0 0" }}>
       <Container>
         <h2
           className="text-center mb-4"

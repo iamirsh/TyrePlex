@@ -42,15 +42,15 @@ const Services = () => {
 
       {/* Main Content */}
       <div
-        className="container"
-        style={{ backgroundColor: "#f8f9fa", padding: "20px 0" }}
+        className="container rounded-3 p-2 pt-4"
+        style={{ backgroundColor: "#f8f9fa" }}
       >
         <Container>
           <Row>
             {services.map((service, index) => (
               <Col lg={4} md={6} sm={12} key={index} className="mb-4">
                 <Card
-                  className="h-100 p-4 d-flex flex-column align-items-center justify-content-center text-center"
+                  className="h-100 p-4 d-flex flex-column align-items-center justify-content-center text-center card-hover"
                   style={{
                     borderRadius: "15px",
                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
@@ -91,9 +91,18 @@ const Services = () => {
 
         <style jsx>{`
           @media (max-width: 768px) {
-            .testimonial-card {
-              margin: 0 10px;
+            .mb-4 {
+              margin-bottom: 1.5rem; // Adjust space between cards
             }
+          }
+          
+          .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+
+          .card-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
           }
         `}</style>
       </div>

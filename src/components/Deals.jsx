@@ -13,8 +13,8 @@ import JKTYRE from "../assets/images/jktyre.png";
 import MRF from "../assets/images/MRF.png";
 
 const CarouselComponent = () => {
-  // Array of services with images and names
-  const services = [
+  // Array of deals with images and names
+  const deals = [
     { image: CEAT, name: "CEAT" },
     { image: APOLLO, name: "APOLLO" },
     { image: BRIDGESTONE, name: "BRIDGESTONE" },
@@ -67,7 +67,7 @@ const CarouselComponent = () => {
   };
 
   const slideLeft = () => {
-    if (currentPosition < services.length - slidesPerPage) {
+    if (currentPosition < deals.length - slidesPerPage) {
       setCurrentPosition(currentPosition + 1);
     }
   };
@@ -100,7 +100,7 @@ const CarouselComponent = () => {
           }}
         ></div>
       </h2>
-      <Container className="carousel-container d-flex justify-content-center bg-light align-items-center my-4 p-4">
+      <Container className="carousel-container d-flex justify-content-center bg-light align-items-center my-4 py-4 rounded-3">
         <div className="slider-container" style={{ position: "relative" }}>
           {/* Left navigation button */}
           <i
@@ -118,14 +118,14 @@ const CarouselComponent = () => {
               zIndex: 1,
             }}
           ></i>
-          <div className="slider" ref={sliderRef}>
-            {services.map((service, index) => (
+          <div className="slider" ref={sliderRef} style={{ "--slides-per-page": slidesPerPage }}>
+            {deals.map((service, index) => (
               <div className="slide" key={index}>
                 <Card
-                  className="testimonial-card p-2 d-flex flex-column justify-content-center align-items-center"
+                  className="testimonial-card d-flex flex-column justify-content-center align-items-center"
                   style={{
-                    width: "200px",
-                    height: "120px",
+                    width: "220px",
+                    height: "110px",
                     borderRadius: "10px",
                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                     border: "none",
@@ -136,8 +136,8 @@ const CarouselComponent = () => {
                     src={service.image}
                     alt={service.name}
                     style={{
-                      height: "120px",
-                      width: "120px",
+                      height: "110px",
+                      width: "110px",
                       objectFit: "contain",
                     }}
                   />
@@ -159,7 +159,7 @@ const CarouselComponent = () => {
           {/* Right navigation button */}
           <i
             className={`bi bi-chevron-right btn no-outline ${
-              currentPosition === services.length - slidesPerPage
+              currentPosition === deals.length - slidesPerPage
                 ? "inactive"
                 : ""
             }`}

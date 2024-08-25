@@ -29,7 +29,7 @@ const PaymentMode = () => {
       </h2>
 
       {/* Container with light background for content */}
-      <Container className="bg-light p-4">
+      <Container className="bg-light p-4 rounded-3">
         <Row>
           {/* Payment Options with Font Size and Bold Check Icon */}
           {[
