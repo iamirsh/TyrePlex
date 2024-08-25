@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Card, Container } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
-import "bootstrap-icons/font/bootstrap-icons.css"; // Bootstrap Icons CSS
+import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
+import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons CSS
 import "./Carousel.css"; // Custom styles
+
+// Import images
 import CEAT from "../assets/images/ceat.png";
 import APOLLO from "../assets/images/apollo.png";
 import BRIDGESTONE from "../assets/images/bridgestone.png";
@@ -11,6 +13,7 @@ import JKTYRE from "../assets/images/jktyre.png";
 import MRF from "../assets/images/MRF.png";
 
 const CarouselComponent = () => {
+  // Array of services with images and names
   const services = [
     { image: CEAT, name: "CEAT" },
     { image: APOLLO, name: "APOLLO" },
@@ -28,10 +31,13 @@ const CarouselComponent = () => {
     { image: CEAT, name: "CEAT" },
     { image: MRF, name: "MRF" },
   ];
+
+  // State and ref for current position and slides per page
   const [currentPosition, setCurrentPosition] = useState(0);
   const [slidesPerPage, setSlidesPerPage] = useState(4);
   const sliderRef = useRef(null);
 
+  // Check viewport width and adjust slides per page
   const checkWidth = () => {
     const containerWidth = window.innerWidth;
     if (containerWidth < 551) {
@@ -46,13 +52,14 @@ const CarouselComponent = () => {
   };
 
   useEffect(() => {
-    checkWidth();
-    window.addEventListener("resize", checkWidth);
+    checkWidth(); // Initial check
+    window.addEventListener("resize", checkWidth); // Update on resize
     return () => {
-      window.removeEventListener("resize", checkWidth);
+      window.removeEventListener("resize", checkWidth); // Clean up
     };
   }, []);
 
+  // Move slides left or right
   const slideRight = () => {
     if (currentPosition > 0) {
       setCurrentPosition(currentPosition - 1);
@@ -65,6 +72,7 @@ const CarouselComponent = () => {
     }
   };
 
+  // Update margin to slide left/right
   useEffect(() => {
     const margin = -currentPosition * (100 / slidesPerPage);
     sliderRef.current.style.marginLeft = `${margin}%`;
@@ -94,8 +102,9 @@ const CarouselComponent = () => {
       </h2>
       <Container className="carousel-container d-flex justify-content-center bg-light align-items-center my-4 p-4">
         <div className="slider-container" style={{ position: "relative" }}>
+          {/* Left navigation button */}
           <i
-            className={`bi bi-chevron-left btn ${
+            className={`bi bi-chevron-left btn no-outline ${
               currentPosition === 0 ? "inactive" : ""
             }`}
             onClick={slideRight}
@@ -120,10 +129,6 @@ const CarouselComponent = () => {
                     borderRadius: "10px",
                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                     border: "none",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
                   }}
                 >
                   <Card.Img
@@ -151,8 +156,9 @@ const CarouselComponent = () => {
               </div>
             ))}
           </div>
+          {/* Right navigation button */}
           <i
-            className={`bi bi-chevron-right btn ${
+            className={`bi bi-chevron-right btn no-outline ${
               currentPosition === services.length - slidesPerPage
                 ? "inactive"
                 : ""

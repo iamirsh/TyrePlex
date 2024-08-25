@@ -1,3 +1,4 @@
+/* Container for the carousel */
 .slider-container {
   background-color: transparent;
   max-width: 1400px;
@@ -6,17 +7,20 @@
   padding: 10px;
 }
 
+/* Style for the navigation buttons */
 .slider-container .btn {
   position: absolute;
   top: calc(50% - 15px);
   cursor: pointer;
 }
 
+/* Style for inactive buttons */
 .slider-container .btn.inactive {
   pointer-events: none;
   opacity: 0.3;
 }
 
+/* Positioning of the left and right buttons */
 .slider-container .btn:first-of-type {
   left: 10px;
 }
@@ -25,13 +29,15 @@
   right: 10px;
 }
 
+/* Slider styles */
 .slider {
   display: flex;
   width: 1000%;
   height: 100%;
-  transition: all 0.5s;
+  transition: margin-left 0.5s ease;
 }
 
+/* Individual slide styles */
 .slide {
   text-align: center;
   margin: auto 10px;
@@ -42,6 +48,25 @@
   font-size: 60px;
 }
 
+/* Remove outline and box-shadow for buttons */
+.no-outline {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove outline and box-shadow on focus and active states */
+.no-outline:focus,
+.no-outline:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove default border applied by Bootstrap */
+.no-outline.btn {
+  border: none;
+}
+
+/* Responsive styles for slider items */
 @media only screen and (min-width: 1100px) {
   .slider .slide {
     width: calc(2.5% - 20px);
