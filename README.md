@@ -23,18 +23,34 @@ Make sure you have the following installed:
 
    ```bash
    git clone https://github.com/iamirsh/TyrePlex.git
+   ```
 
 2. Navigate to the project directory:
 
    ```bash
    cd TyrePlex
+   ```
 
 3. Install dependencies:
 
    ```bash
    npm install
-
+   ```
    or if you are using Yarn:
 
    ```bash
    yarn install
+   ```
+# Running the App
+To start the development server, run:
+   ```bash
+   npm run dev
+   ```
+   or with Yarn:
+   ```bash
+   yarn dev
+   ```
+
+Open your browser and visit http://localhost:3000 to see the app in action.
+
+
