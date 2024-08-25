@@ -52,8 +52,12 @@ To start the development server, run:
    ```
 
 Open your browser and visit http://localhost:3000 to see the app in action.
+
 ![desktop-view](https://github.com/user-attachments/assets/f5c6a8fa-8d6d-4447-9f2e-7d76a3cf3466)
+
 ![mobile-view](https://github.com/user-attachments/assets/31c2d4b1-4fa3-4d36-96ca-188aa45797eb)
+![mobile-view2](https://github.com/user-attachments/assets/71d4d07a-54af-4ec3-a194-5ef0d1e73280)
+
 
 
 
