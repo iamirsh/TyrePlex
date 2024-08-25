@@ -51,7 +51,7 @@ const Footer = () => {
       </Container>
 
       {/* Footer Bottom Section with Border and Text */}
-      <Container className="text-center border-top border-secondary py-3">
+      <Container className="text-center border-top border-secondary-subtle py-3">
         <span>©2024 TyrePlex Technologies & Commerce Pvt. Ltd. All Rights Reserved.</span>
       </Container>
     </>
